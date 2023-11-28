@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            margin:0 ;
+            padding: 0;
+        }
+        body{
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            /* min-height: 100vh; */
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            margin: 50px;
+            background-color: #fff;
+            display: grid;
+            grid-template-columns: 1fr 2fr ;   /*  partition*/
+            box-shadow: 0 35px 55px rgba(0,0,0,0.1);    /* x y shadow color(0,0,0,opacity)*/
+        }
+        .container .left-side{
+            position: relative;
+            background-color: #003147;
+            padding: 40px;
+        }
+        .profileText{
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+
+        }
+        .profileText .imgBox{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            overflow:hidden;
+        }
+        .profileText .imgBox img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profileText h2{
+         color:#fff ;
+         font-size: 1.5em;
+         margin-top: 20px;
+         text-transform: uppercase;
+         text-align: center;
+         font-weight:600;
+         line-height: 1.4em;
+        }
+        .profileText h2 span{
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+        .container .right-side{
+            position: relative;
+            background-color: #fff;
+            padding: 40px;
+        }
+        .contact_info{
+            padding-top: 40px;
+        }
+        .title{
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .contact_info ul li{
+            position: relative;
+            list-style: none;
+            margin: 10px;
+            cursor: pointer;
+            text-align: left;
+        }
+        .contact_info ul li .icon{
+            color: #03a9f4;
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+        }
+        .contact_info ul li span{
+            color: #fff;
+            font-weight: 300;
+        }
+        .contact_info.Education li{
+            margin-bottom: 15px;
+        }
+        .contact_info.Education h5{
+            color: #03a9f4;
+            font-weight: 500;
+        }
+        .contact_info.Education h4:nth-child(2){
+            color:#fff;
+            font-weight: 500;
+        }
+        .contact_info.Education h4{
+            color:#fff;
+            font-weight: 300;
+        }
+        .contact_info.Language .percent{
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background-color: #081921;
+            display: block;
+            margin-top: 5px;
+        }
+        .contact_info.Language  div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: #03a9f4;
+        }
+/* right part */
+            .about{
+                margin-bottom: 50px;
+            }
+            .about:last-child{
+                margin-bottom: 0;
+            }
+            .title2{
+                color: #003147;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            p{
+                color: #333;
+            }
+            .about .box{
+                display: flex;
+                flex-direction: row;
+                margin: 20px 0;
+                text-align: left;
+            }
+            .about .box .company_year{
+                min-width: 175px;
+            }
+            .about .box .company_year h5{
+                color: #848c90;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .about .box .text h4{
+                text-transform: uppercase;
+                 color: #2a7da2;
+                 font-size: 16px;
+            }
+            .skill .box{
+                position: relative;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                justify-content: center;
+                text-align: center;
+            }
+            .skill .box h4{
+                color: #848c99;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            .skill .box  .percent{
+                position: relative;
+                width: 100%;
+                height: 10px;
+                background: #f0f0f0';
+            }
+            .skill .box  .percent div{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                background: #03a9f4;
+            }
+
+            .Interest ul{
+                display: grid;
+                grid-template-columns:repeat(4,1fr);
+            }
+            .Interest ul li{
+                color: #333;
+                list-style: none;
+                font-weight: 500;
+                margin: 10px 5px;
+            }
+            .Interest ul li .fa{
+                color: #03a9f4;
+                font-size: 18px;
+                width: 30px;
+            }
+            @media(max-width:1000px){
+                .container{
+                    margin: 10px;
+                    grid-template-columns: repeat(1,1fr);
+                }
+                .Interest ul{
+                    grid-template-columns: repeat(2,1fr);
+                }
+            }
+            @media(max-width:600px){
+                .about .box{
+                    flex-direction: column;
+                }
+                .about .box .company_year{
+                   margin-bottom: 5px;
+                }
+                .Interest ul{
+                    grid-template-columns: repeat(1,1fr);
+                }
+                .skill .box{
+                    grid-template-columns: repeat(1,1fr);
+                }
+            }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="profileText">
+                <div class="imgBox">
+                    <img src="Rohit1.jpg" alt="">
+                </div>
+                <h2>Rohit Dekate <br><span>Web Developer</span></h2>
+            </div>
+            <div class="contact_info">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+91 8484863636</span>
+                    </li>
+                     <li>
+                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="text">Rohitpower1@gmail.com</span>
+                    </li>
+                     <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <span class="text">wwww.linkedin.com/me</span>
+                    </li>
+                     <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">Nagpur, Maharashtra</span>
+                    </li>
+                </ul>
+
+            </div>
+
+             <div class="contact_info Education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2013-2016</h5>
+                        <h4>Graduation in B-Tech in G.H.Raisoni clg of Engineering</h4>
+                        <h4>R.T.M.N.University</h4>
+                    </li>
+                     <li>
+                        <h5>2009-2011</h5>
+                        <h4>12 <sup>th</sup> in  Dr.B.R.Ambedkar College</h4>
+                        <h4>R.T.M.N.University</h4>
+                    </li>
+                    <li>
+                        <h5>2010</h5>
+                        <h4>10 <sup>th</sup> in  Dr.B.R.Ambedkar School</h4>
+                        <h4>R.T.M.N.University</h4>
+                    </li>
+                     
+                </ul>
+
+            </div>
+
+            <div class="contact_info Language">
+                <h3 class="title">Language</h3>
+                <ul>
+                    <li>
+                       <span class="text">English</span>
+                       <span class="percent">
+                          <div style="width: 80%;"></div>
+                       </span>
+                    </li>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percent">
+                            <div style="width: 90%;"></div>
+                        </span>
+                     </li>
+                     <li>
+                        <span class="text">Marathi</span>
+                        <span class="percent">
+                            <div style="width:95%;"></div>
+                        </span>
+                     </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="right-side">
+            <div  class="about">
+                <h2 class="title2">Profile</h2>
+                <p>I am Rohit Dekate. I  have Graduate in B-Tech. My Profile is Web Devoloper. I have skill like HTML , CSS , Javascript, Bootstrap, Ajax, SQL, MongoDB, API, NodeJS, JIRA , Unix etc.
+                    I am Full stack Developer.
+                </p>
+            </div>
+
+            <div  class="about">
+                <h2 class="title2">Experience</h2>
+                    <div class="box">
+                        <div class="company_year">
+                            <h5>2019-Present</h5>
+                            <h5>Mindtree Pvt Ltd, Pune</h5>
+                        </div>
+                        <div class="text">
+                            <h4>Full-Stack Devoloper</h4>
+                            <p>I have skill  HTML, CSS, Javascript,Bootstrap, AJAX, Unix, MongoDB</p>
+                        </div>
+                    </div>
+            </div>
+
+            <div  class="about skill">
+                <h2 class="title2">Professional Skills</h2>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Javascript</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Bootstrap</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>MongoDB</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Ajax</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>NodeJs</h4>
+                    <div class="percent">
+                        <div style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>React Framework</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div  class="about Interest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <li><i class="fa fa-book" aria-hidden="true"></i>Reading</li>
+                    <li><i class="fa fa-plane" aria-hidden="true"></i>Journey</li>
+                    <li><i class="fa fa-youtube" aria-hidden="true"></i>Gathering Knowledge</li>
+                    <li><i class="fa fa-microphone" aria-hidden="true"></i>Singing</li>
+                </ul>
+            </div>    
+
+        </div>
+    </div>
+    
+</body>
+</html>
+<!-- li h4 -->
